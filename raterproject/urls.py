@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 from raterapi.views import UploadedImageViewSet
-from raterapi.views import login_user, register_user, GamesView, CategoriesView, RatingsView
+from raterapi.views import login_user, register_user, GamesView, CategoriesView, RatingsView, ReviewsViewSet
 
 
 
@@ -11,6 +11,7 @@ router.register(r'uploads', UploadedImageViewSet , 'upload')
 router.register(r'games', GamesView, 'game')
 router.register(r'categories', CategoriesView, 'category')
 router.register(r'ratings', RatingsView, 'rating')
+router.register(r'reviews', ReviewsViewSet, 'review')
 
 urlpatterns = [
     path('', include(router.urls)),

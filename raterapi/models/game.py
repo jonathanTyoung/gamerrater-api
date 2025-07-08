@@ -1,19 +1,18 @@
 from django.db import models
 from django.conf import settings
 
+from django.db import models
+
 class Game(models.Model):
-    title = models.CharField(max_length=255, unique=True)
-    description = models.TextField(blank=True, null=True)
-    designer = models.CharField(max_length=255, blank=True, null=True)
-    year_released = models.IntegerField(blank=True, null=True)
-    num_players = models.CharField(max_length=100, blank=True, null=True)
-    est_playtime = models.CharField(max_length=100, blank=True, null=True)
-    age_recommendation = models.CharField(max_length=100, blank=True, null=True)
-    creator = models.ForeignKey(
-        settings.AUTH_USER_MODEL,  # or 'raterapi.Player' if you have a custom Player model
-        on_delete=models.CASCADE,
-        related_name='games'
-    )
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    designer = models.CharField(max_length=100)
+    year_released = models.IntegerField()
+    num_players = models.CharField(max_length=20, default="N/A")
+    est_playtime = models.CharField(max_length=50)
+    age_recommendation = models.CharField(max_length=20)
+    creator = models.ForeignKey("auth.User", on_delete=models.CASCADE, related_name="games")
+    categories = models.ManyToManyField("Category", related_name="games")
 
     def __str__(self):
         return self.title

@@ -6,81 +6,10 @@ from raterapi.models import Category
 
 
 class CategoriesView(ViewSet):
-    """Category view set"""
-
-
-    def create(self, request):
-        """Handle POST operations
-
-        Returns:
-            Response -- JSON serialized instance
-        """
-        category = Category()
-        category.sample_name = request.data["name"]
-        category.sample_description = request.data["description"]
-
-        try:
-            category.save()
-            serializer = CategorySerializer(category)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        except Exception as ex:
-            return Response({"reason": ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
-
-    def retrieve(self, request, pk=None):
-        """Handle GET requests for single item
-
-        Returns:
-            Response -- JSON serialized instance
-        """
-        try:
-            category = Category.objects.get(pk=pk)
-            serializer = CategorySerializer(category)
-            return Response(serializer.data)
-        except Exception as ex:
-            return Response({"reason": ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
-
-    def update(self, request, pk=None):
-        """Handle PUT requests
-
-        Returns:
-            Response -- Empty body with 204 status code
-        """
-        try:
-            category = Category.objects.get(pk=pk)
-            category.sample_name = request.data["name"]
-            category.sample_description = request.data["description"]
-            category.save()
-        except Category.DoesNotExist:
-            return Response(None, status=status.HTTP_404_NOT_FOUND)
-
-        except Exception as ex:
-            return HttpResponseServerError(ex)
-
-        return Response(None, status=status.HTTP_204_NO_CONTENT)
-
-    def destroy(self, request, pk=None):
-        """Handle DELETE requests for a single item
-
-        Returns:
-            Response -- 200, 404, or 500 status code
-        """
-        try:
-            category = Category.objects.get(pk=pk)
-            category.delete()
-            return Response(None, status=status.HTTP_204_NO_CONTENT)
-
-        except Category.DoesNotExist as ex:
-            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
-
-        except Exception as ex:
-            return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    """ViewSet for handling Category operations"""
 
     def list(self, request):
-        """Handle GET requests for all items
-
-        Returns:
-            Response -- JSON serialized array
-        """
+        """GET all categories"""
         try:
             categories = Category.objects.all()
             serializer = CategorySerializer(categories, many=True)
@@ -88,20 +17,53 @@ class CategoriesView(ViewSet):
         except Exception as ex:
             return HttpResponseServerError(ex)
 
+    def retrieve(self, request, pk=None):
+        """GET a single category"""
+        try:
+            category = Category.objects.get(pk=pk)
+            serializer = CategorySerializer(category)
+            return Response(serializer.data)
+        except Category.DoesNotExist:
+            return Response({'message': 'Category not found.'}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as ex:
+            return HttpResponseServerError(ex)
+
+    def create(self, request):
+        """POST a new category"""
+        try:
+            category = Category(label=request.data["label"])
+            category.save()
+            serializer = CategorySerializer(category)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except Exception as ex:
+            return Response({'reason': str(ex)}, status=status.HTTP_400_BAD_REQUEST)
+
+    def update(self, request, pk=None):
+        """PUT an existing category"""
+        try:
+            category = Category.objects.get(pk=pk)
+            category.label = request.data["label"]
+            category.save()
+            return Response(None, status=status.HTTP_204_NO_CONTENT)
+        except Category.DoesNotExist:
+            return Response({'message': 'Category not found.'}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as ex:
+            return HttpResponseServerError(ex)
+
+    def destroy(self, request, pk=None):
+        """DELETE a category"""
+        try:
+            category = Category.objects.get(pk=pk)
+            category.delete()
+            return Response(None, status=status.HTTP_204_NO_CONTENT)
+        except Category.DoesNotExist:
+            return Response({'message': 'Category not found.'}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as ex:
+            return HttpResponseServerError(ex)
 
 class CategorySerializer(serializers.ModelSerializer):
-    """JSON serializer"""
-
+    """JSON serializer for Category"""
+    
     class Meta:
         model = Category
-        fields = (
-            'id',
-            'title',
-            'description',
-            'designer',
-            'year_released',
-            'num_players',
-            'est_playtime',
-            'age_recommendation',
-            'creator',
-        )
+        fields = ['id', 'label']
