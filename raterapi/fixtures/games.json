@@ -1,0 +1,142 @@
+[
+  {
+    "model": "raterapi.game",
+    "pk": 1,
+    "fields": {
+      "title": "Catan",
+      "description": "A strategy game of trading and building.",
+      "designer": "Klaus Teuber",
+      "year_released": 1995,
+      "num_players": "3-4",
+      "est_playtime": "60-120 min",
+      "age_recommendation": "10+",
+      "creator": 1
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 2,
+    "fields": {
+      "title": "Pandemic",
+      "description": "A cooperative game to stop global outbreaks.",
+      "designer": "Matt Leacock",
+      "year_released": 2008,
+      "num_players": "2-4",
+      "est_playtime": "45 min",
+      "age_recommendation": "8+",
+      "creator": 1
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 3,
+    "fields": {
+      "title": "Dominion",
+      "description": "A deck-building card game.",
+      "designer": "Donald X. Vaccarino",
+      "year_released": 2008,
+      "num_players": "2-4",
+      "est_playtime": "30 min",
+      "age_recommendation": "13+",
+      "creator": 2
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 4,
+    "fields": {
+      "title": "Ticket to Ride",
+      "description": "Collect train cards to claim railway routes.",
+      "designer": "Alan R. Moon",
+      "year_released": 2004,
+      "num_players": "2-5",
+      "est_playtime": "30-60 min",
+      "age_recommendation": "8+",
+      "creator": 2
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 5,
+    "fields": {
+      "title": "Carcassonne",
+      "description": "A tile-placement game set in the French countryside.",
+      "designer": "Klaus-Jürgen Wrede",
+      "year_released": 2000,
+      "num_players": "2-5",
+      "est_playtime": "30-45 min",
+      "age_recommendation": "7+",
+      "creator": 3
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 6,
+    "fields": {
+      "title": "7 Wonders",
+      "description": "Draft cards to build your ancient civilization.",
+      "designer": "Antoine Bauza",
+      "year_released": 2010,
+      "num_players": "2-7",
+      "est_playtime": "30 min",
+      "age_recommendation": "10+",
+      "creator": 3
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 7,
+    "fields": {
+      "title": "Splendor",
+      "description": "Collect gems and develop your Renaissance empire.",
+      "designer": "Marc André",
+      "year_released": 2014,
+      "num_players": "2-4",
+      "est_playtime": "30 min",
+      "age_recommendation": "10+",
+      "creator": 1
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 8,
+    "fields": {
+      "title": "Azul",
+      "description": "Draft tiles to decorate the royal palace.",
+      "designer": "Michael Kiesling",
+      "year_released": 2017,
+      "num_players": "2-4",
+      "est_playtime": "30-45 min",
+      "age_recommendation": "8+",
+      "creator": 2
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 9,
+    "fields": {
+      "title": "Gloomhaven",
+      "description": "A massive campaign-driven cooperative adventure.",
+      "designer": "Isaac Childres",
+      "year_released": 2017,
+      "num_players": "1-4",
+      "est_playtime": "60-120 min",
+      "age_recommendation": "14+",
+      "creator": 3
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 10,
+    "fields": {
+      "title": "Wingspan",
+      "description": "A competitive bird-collection, engine-building game.",
+      "designer": "Elizabeth Hargrave",
+      "year_released": 2019,
+      "num_players": "1-5",
+      "est_playtime": "40-70 min",
+      "age_recommendation": "10+",
+      "creator": 1
+    }
+  }
+]
