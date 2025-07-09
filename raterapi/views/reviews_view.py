@@ -15,7 +15,7 @@ class ReviewsViewSet(ViewSet):
         try:
             # Optional: Prevent duplicate before saving
             existing_review = Review.objects.filter(
-                user=request.data["user"], game=request.data["game"]
+                user=request.user, game=request.data["game"]
             ).first()
             if existing_review:
                 return Response(
@@ -25,7 +25,7 @@ class ReviewsViewSet(ViewSet):
 
             review = Review()
             review.game = Game.objects.get(pk=request.data["game"])
-            review.user = User.objects.get(pk=request.data["user"])
+            review.user = request.user
             review.content = request.data["content"]
             review.save()
 
@@ -86,13 +86,18 @@ class ReviewsViewSet(ViewSet):
             return Response({'detail': str(ex)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def list(self, request):
-        """Handle GET requests for all reviews"""
+        """Handle GET requests for all reviews or by game"""
         try:
-            reviews = Review.objects.all()
+            game_id = request.query_params.get('game', None)
+            if game_id:
+                reviews = Review.objects.filter(game__id=game_id)
+            else:
+                reviews = Review.objects.all()
             serializer = ReviewSerializer(reviews, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Exception as ex:
             return Response({"detail": str(ex)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
 
 class ReviewSerializer(serializers.ModelSerializer):
