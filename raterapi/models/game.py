@@ -1,8 +1,6 @@
 from django.db import models
 from django.conf import settings
 
-from django.db import models
-
 class Game(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
@@ -16,3 +14,12 @@ class Game(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def average_rating(self):
+        """Average rating calculated from related Rating objects"""
+        ratings = self.ratings.all()
+        if ratings.exists():
+            total = sum(r.rating for r in ratings)
+            return round(total / ratings.count(), 1)
+        return None
