@@ -1,0 +1,302 @@
+[
+  {
+    "model": "raterapi.game",
+    "pk": 1,
+    "fields": {
+      "title": "Catan",
+      "description": "A strategy game of trading and building.",
+      "designer": "Klaus Teuber",
+      "year_released": 1995,
+      "num_players": "3-4",
+      "est_playtime": "60-120 min",
+      "age_recommendation": "10+",
+      "creator": 1,
+      "categories": [1, 7]  
+  }
+},
+  {
+    "model": "raterapi.game",
+    "pk": 2,
+    "fields": {
+      "title": "Pandemic",
+      "description": "A cooperative game to stop global outbreaks.",
+      "designer": "Matt Leacock",
+      "year_released": 2008,
+      "num_players": "2-4",
+      "est_playtime": "45 min",
+      "age_recommendation": "8+",
+      "creator": 1,
+      "categories": [2, 4]  
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 3,
+    "fields": {
+      "title": "Dominion",
+      "description": "A deck-building card game.",
+      "designer": "Donald X. Vaccarino",
+      "year_released": 2008,
+      "num_players": "2-4",
+      "est_playtime": "30 min",
+      "age_recommendation": "13+",
+      "creator": 2,
+      "categories": [3, 7]  
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 4,
+    "fields": {
+      "title": "Ticket to Ride",
+      "description": "Collect train cards to claim railway routes.",
+      "designer": "Alan R. Moon",
+      "year_released": 2004,
+      "num_players": "2-5",
+      "est_playtime": "30-60 min",
+      "age_recommendation": "8+",
+      "creator": 2,
+      "categories": [1, 7]  
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 5,
+    "fields": {
+      "title": "Carcassonne",
+      "description": "A tile-placement game set in the French countryside.",
+      "designer": "Klaus-Jürgen Wrede",
+      "year_released": 2000,
+      "num_players": "2-5",
+      "est_playtime": "30-45 min",
+      "age_recommendation": "7+",
+      "creator": 3,
+      "categories": [5]  
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 6,
+    "fields": {
+      "title": "7 Wonders",
+      "description": "Draft cards to build your ancient civilization.",
+      "designer": "Antoine Bauza",
+      "year_released": 2010,
+      "num_players": "2-7",
+      "est_playtime": "30 min",
+      "age_recommendation": "10+",
+      "creator": 3,
+      "categories": [6, 3] 
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 7,
+    "fields": {
+      "title": "Splendor",
+      "description": "Collect gems and develop your Renaissance empire.",
+      "designer": "Marc André",
+      "year_released": 2014,
+      "num_players": "2-4",
+      "est_playtime": "30 min",
+      "age_recommendation": "10+",
+      "creator": 1,
+      "categories": [6]  
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 8,
+    "fields": {
+      "title": "Azul",
+      "description": "Draft tiles to decorate the royal palace.",
+      "designer": "Michael Kiesling",
+      "year_released": 2017,
+      "num_players": "2-4",
+      "est_playtime": "30-45 min",
+      "age_recommendation": "8+",
+      "creator": 2,
+      "categories": [5]
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 9,
+    "fields": {
+      "title": "Gloomhaven",
+      "description": "A massive campaign-driven cooperative adventure.",
+      "designer": "Isaac Childres",
+      "year_released": 2017,
+      "num_players": "1-4",
+      "est_playtime": "60-120 min",
+      "age_recommendation": "14+",
+      "creator": 3,
+      "categories": [2, 8]  
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 10,
+    "fields": {
+      "title": "Wingspan",
+      "description": "A competitive bird-collection, engine-building game.",
+      "designer": "Elizabeth Hargrave",
+      "year_released": 2019,
+      "num_players": "1-5",
+      "est_playtime": "40-70 min",
+      "age_recommendation": "10+",
+      "creator": 1,
+      "categories": [6, 9]  
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 11,
+    "fields": {
+      "title": "The Elder Scrolls V: Skyrim",
+      "description": "An open-world fantasy RPG set in the province of Skyrim.",
+      "designer": "Bethesda Game Studios",
+      "year_released": 2011,
+      "num_players": "1",
+      "est_playtime": "100+ hrs",
+      "age_recommendation": "17+",
+      "creator": 1,
+      "categories": [1, 3] 
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 12,
+    "fields": {
+      "title": "Hollow Knight",
+      "description": "A challenging 2D action-adventure set in a vast ruined kingdom of insects.",
+      "designer": "Team Cherry",
+      "year_released": 2017,
+      "num_players": "1",
+      "est_playtime": "30-40 hrs",
+      "age_recommendation": "10+",
+      "creator": 1,
+      "categories": [3, 7]
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 13,
+    "fields": {
+      "title": "Portal 2",
+      "description": "A first-person puzzle game with physics-based mechanics and dark humor.",
+      "designer": "Valve Corporation",
+      "year_released": 2011,
+      "num_players": "1-2",
+      "est_playtime": "6-10 hrs",
+      "age_recommendation": "10+",
+      "creator": 1,
+      "categories": [2, 4]
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 14,
+    "fields": {
+      "title": "Stardew Valley",
+      "description": "A farming simulator with RPG and social elements.",
+      "designer": "ConcernedApe",
+      "year_released": 2016,
+      "num_players": "1-4",
+      "est_playtime": "60+ hrs",
+      "age_recommendation": "8+",
+      "creator": 1,
+      "categories": [5, 8]
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 15,
+    "fields": {
+      "title": "Dark Souls III",
+      "description": "A dark and punishing action RPG set in a decaying medieval world.",
+      "designer": "FromSoftware",
+      "year_released": 2016,
+      "num_players": "1-6",
+      "est_playtime": "40-70 hrs",
+      "age_recommendation": "16+",
+      "creator": 1,
+      "categories": [1, 3]
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 16,
+    "fields": {
+      "title": "Celeste",
+      "description": "A platformer about climbing a mountain and battling inner demons.",
+      "designer": "Matt Makes Games",
+      "year_released": 2018,
+      "num_players": "1",
+      "est_playtime": "8-10 hrs",
+      "age_recommendation": "10+",
+      "creator": 1,
+      "categories": [7, 4]
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 17,
+    "fields": {
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "description": "Explore a vast open world and rediscover ancient secrets in Hyrule.",
+      "designer": "Nintendo",
+      "year_released": 2017,
+      "num_players": "1",
+      "est_playtime": "60-120 hrs",
+      "age_recommendation": "10+",
+      "creator": 1,
+      "categories": [1, 3]
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 18,
+    "fields": {
+      "title": "Among Us",
+      "description": "A multiplayer social deduction game set on a spaceship.",
+      "designer": "Innersloth",
+      "year_released": 2018,
+      "num_players": "4-10",
+      "est_playtime": "10-20 min",
+      "age_recommendation": "7+",
+      "creator": 1,
+      "categories": [6, 9]
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 19,
+    "fields": {
+      "title": "Hades",
+      "description": "A fast-paced roguelike dungeon crawler set in the Greek underworld.",
+      "designer": "Supergiant Games",
+      "year_released": 2020,
+      "num_players": "1",
+      "est_playtime": "20-50 hrs",
+      "age_recommendation": "13+",
+      "creator": 1,
+      "categories": [1, 7]
+    }
+  },
+  {
+    "model": "raterapi.game",
+    "pk": 20,
+    "fields": {
+      "title": "Minecraft",
+      "description": "A sandbox game about placing blocks and going on adventures.",
+      "designer": "Mojang Studios",
+      "year_released": 2011,
+      "num_players": "1-30",
+      "est_playtime": "Unlimited",
+      "age_recommendation": "7+",
+      "creator": 1,
+      "categories": [5, 8]
+    }
+  }
+]
