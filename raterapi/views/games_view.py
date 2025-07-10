@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.http import HttpResponseServerError
 from rest_framework import serializers, status
 from rest_framework.response import Response
@@ -10,15 +11,37 @@ User = get_user_model()
 
 class GamesView(ViewSet):
     """Game view set"""
-
+    
     def list(self, request):
-        """GET all games"""
+        """GET all games, with optional search"""
         try:
+            search_text = request.query_params.get('q', None)
+            orderby = request.query_params.get('orderby', None)
+
             games = Game.objects.all()
+
+            if search_text:
+                games = Game.objects.filter(
+                    Q(title__icontains=search_text) |
+                    Q(description__icontains=search_text) |
+                    Q(designer__icontains=search_text)
+                )
+
+            allowed_fields = {
+                "year": "year_released",
+                "est_playtime": "est_playtime",
+                "designer": "designer"
+            }
+
+            if orderby in allowed_fields:
+                games = games.order_by(allowed_fields[orderby])
+
             serializer = GameSerializer(games, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
+
         except Exception as ex:
             return HttpResponseServerError(str(ex))
+
 
     def retrieve(self, request, pk=None):
         """GET single game by ID"""
